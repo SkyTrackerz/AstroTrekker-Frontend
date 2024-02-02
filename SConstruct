@@ -7,7 +7,7 @@ vars.AddVariables(
     EnumVariable('mode', 'Build mode', 'debug',
         allowed_values=('debug', 'release', 'profile')),
     BoolVariable('es6', 'Create ES6 js module', False),
-    BoolVariable('werror', 'Warnings as error', True),
+    BoolVariable('werror', 'Warnings as error', False),
 )
 
 VariantDir('build/src', 'src', duplicate=0)

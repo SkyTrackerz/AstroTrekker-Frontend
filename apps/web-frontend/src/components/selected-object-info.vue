@@ -63,12 +63,15 @@
       </v-btn>
       <v-btn v-if="showPointToButton" fab small color="transparent" v-on:click.native="lockToSelection()">
         <img src="@/assets/images/svg/ui/point_to.svg" height="40px" style="min-height: 40px"></img>
-      </v-btn>
+      </v-btn>star
       <v-btn v-if="!showPointToButton" fab small color="transparent" @mousedown="zoomOutButtonClicked()">
         <img :class="{bt_disabled: !zoomOutButtonEnabled}" src="@/assets/images/svg/ui/remove_circle_outline.svg" height="40px" style="min-height: 40px"></img>
       </v-btn>
       <v-btn v-if="!showPointToButton" fab small color="transparent" @mousedown="zoomInButtonClicked()">
         <img :class="{bt_disabled: !zoomInButtonEnabled}" src="@/assets/images/svg/ui/add_circle_outline.svg" height="40px" style="min-height: 40px"></img>
+      </v-btn>
+      <v-btn fab small color="transparent" @click="sendToStarTracker">
+        Tracker
       </v-btn>
     </div>
     <v-snackbar bottom left :timeout="2000" v-model="copied" color="secondary" >
@@ -346,6 +349,12 @@ export default {
         clearTimeout(this.zoomTimeout)
         this.zoomTimeout = undefined
       }
+    },
+    sendToStarTracker: function () {
+      console.log('tracker button clicked!')
+      var sel = this.$stel.core.selection
+      console.log('selection obj=')
+      console.log(sel)
     },
     extraButtonClicked: function (btn) {
       btn.callback()

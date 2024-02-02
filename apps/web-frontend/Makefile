@@ -5,11 +5,11 @@
 #
 # The terms of the AGPL v3 license can be found in the main directory of this
 # repository.
-
+PWD := /mnt/c/Users/rwetz/Projects/NotMyProjects/stellarium-web-engine/apps/web-frontend
 .PHONY: setup build dev start
 
 gen-es6:
-	cd ../.. && docker run -it -p 8000:8000 -v "$(PWD)/../..:/app" swe-dev /bin/bash -c "source /emsdk/emsdk_env.sh && make js-es6"
+	cd ../.. && docker run -it -p 8000:8000 -v "/mnt/c/Users/rwetz/Projects/NotMyProjects/stellarium-web-engine:/app" swe-dev /bin/bash -c "cd /app && source /emsdk/emsdk_env.sh && make js-es6"
 
 gen-es6-debug:
 	cd ../.. && docker run -it -p 8000:8000 -v "$(PWD)/../..:/app" swe-dev /bin/bash -c "source /emsdk/emsdk_env.sh && make js-es6-debug"

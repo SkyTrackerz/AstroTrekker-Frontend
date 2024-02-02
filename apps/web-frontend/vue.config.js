@@ -1,7 +1,10 @@
 module.exports = {
   runtimeCompiler: true,
   publicPath: process.env.CDN_ENV ? process.env.CDN_ENV : '/',
-
+  // Add this to set the development server host to `0.0.0.0`
+  devServer: {
+    host: '0.0.0.0',
+  },
   chainWebpack: config => {
     // workaround taken from webpack/webpack#6642
     config.output

@@ -9,6 +9,7 @@ RUN chown -R node /app
 USER node
 RUN id node
 
+COPY package.json yarn.lock ./
 RUN yarn
 
 CMD yarn run dev

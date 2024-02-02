@@ -220,7 +220,7 @@ export default {
         plugin.onAppMounted(that)
       }
     }
-
+/** 
     import('@/assets/js/stellarium-web-engine.wasm').then(f => {
       // Initialize the StelWebEngine viewer singleton
       // After this call, the StelWebEngine state will always be available in vuex store
@@ -274,7 +274,7 @@ export default {
       } catch (e) {
         this.$store.commit('setValue', { varName: 'wasmSupport', newValue: false })
       }
-    })
+    })*/
   }
 }
 </script>
